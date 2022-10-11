@@ -25,6 +25,8 @@ class CCSolution {
 }
 
 /*
+https://school.programmers.co.kr/learn/courses/30/lessons/12943
+
 콜라츠 추측
 
 문제 설명

@@ -27,6 +27,7 @@ class SOASolution {
 
 
 /* 
+https://school.programmers.co.kr/learn/courses/30/lessons/12928
  약수의 합
 
 문제 설명

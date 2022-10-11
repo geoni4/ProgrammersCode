@@ -31,6 +31,8 @@ class SNDNSolution {
 }
 
 /*
+
+https://school.programmers.co.kr/learn/courses/30/lessons/12931
 자릿수 더하기
 
 문제 설명
