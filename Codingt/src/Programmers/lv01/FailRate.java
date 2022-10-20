@@ -7,8 +7,9 @@ public class FailRate {
 	public static void main(String[] args) {
 		FailRateSolution sol = new FailRateSolution();
 		int N = 5;
-		int[] stages = {2, 1, 2, 6, 4, 2};
-		sol.solution(0, stages);
+		int[] stages = {2, 1, 2, 6, 4, 2, 3, 3};
+		int[] answer = sol.solution(N, stages);
+		System.out.println(Arrays.toString(answer));
 	}
 }
 
@@ -16,7 +17,9 @@ class FailRateSolution {
     public int[] solution(int N, int[] stages) {
         int[] answer = new int[N];
         Challenge[] chal = new Challenge[N+1];
-        
+        for(int i=0;i<chal.length;i++) {
+        	chal[i] = new Challenge();
+        }
         allStages(stages, chal);
         Arrays.sort(chal, (c1, c2)->{
 			long[] appliedNum = {c1.allChallenger*c2.clearedPeople ,c2.allChallenger*c1.clearedPeople};
@@ -35,7 +38,7 @@ class FailRateSolution {
         for(int i =0;i<stages.length;i++){
         	chal[stages[i]-1].failedPeople++;
             for(int j =0;j<stages[i]-1;j++){
-                chal[j].clearedPeople++;	//clearedPeople[j]++;
+                chal[j].clearedPeople++;
             }
         }
         for(int i =0;i<chal.length;i++) {
@@ -44,13 +47,18 @@ class FailRateSolution {
         }
     }
     //도전자 최소공배수로 만들고 비교한 다음 sort
-    abstract class Challenge implements Comparator<Challenge>{
+    class Challenge implements Comparator<Challenge>{
 	    public int index=0;
 	    public long allChallenger=0;
 	    public long clearedPeople=0;
 	    public long failedPeople=0;
+	    
+		@Override
+		public int compare(Challenge o1, Challenge o2) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
     }
-    //도전자 최소공배수로 만들고 비교한 다음 sort
 }
 
 
