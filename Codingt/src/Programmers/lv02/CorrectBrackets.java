@@ -26,8 +26,7 @@ class CBSolution {
         if(!st.empty()){
             return false;
         }
-        System.out.println("Hello Java");
-        
+
         return answer;
     }
 }
